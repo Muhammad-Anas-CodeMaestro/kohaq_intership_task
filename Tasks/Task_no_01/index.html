@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kohaq Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-gray-50 text-gray-900 leading-relaxed">
+    <header class="bg-white shadow-sm sticky top-0 z-30">
+      <div
+        class="container mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <a href="#home" class="text-2xl font-bold text-purple-600 flex items-center gap-2">
+          <span> <img src="./Kohaq Logo.jpg" alt="Kohaq Logo" class="h-10 mt-2" /> </span>
+          <span class="text-gray-700">Education</span>
+        </a>
+        <nav class="hidden md:flex gap-6 items-center">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#courses" class="nav-link">Courses</a>
+          <a href="#schedule" class="nav-link">Schedule</a>
+          <a href="#contact" class="nav-link">Contact</a>
+          <button id="openRegister" class="btn-primary ml-4">Register</button>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button
+            id="menuToggle"
+            class="p-2 rounded-md focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg
+              id="menuIcon"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 text-gray-700"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 8h16M4 16h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile nav panel -->
+      <div id="mobileNav" class="md:hidden hidden bg-white border-t">
+        <div class="px-6 py-4 flex flex-col gap-3">
+          <a href="#about" class="nav-link-mobile">About</a>
+          <a href="#courses" class="nav-link-mobile">Courses</a>
+          <a href="#schedule" class="nav-link-mobile">Schedule</a>
+          <a href="#contact" class="nav-link-mobile">Contact</a>
+          <button id="openRegisterMobile" class="btn-primary w-full mt-2">
+            Register
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO / LANDING -->
+    <main id="home" class="container mx-auto px-6 py-12">
+      <section class="grid gap-8 md:grid-cols-2 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+            Learn web development with
+            <span class="text-purple-600">Kohaq Education</span>
+          </h1>
+          <p class="mt-4 text-gray-700 max-w-xl">
+            Hands-on frontend courses focused on modern tools — React, Next.js,
+            Tailwind CSS — and building projects you can show in your portfolio.
+          </p>
+
+          <div class="mt-6 flex gap-4">
+            <button id="ctaRegister" class="btn-primary">Register Now</button>
+            <a href="#courses" class="btn-outline">View Courses</a>
+          </div>
+        </div>
+
+        <div class="order-first md:order-last">
+          <!-- simple illustrative card area -->
+          <div
+            class="bg-gradient-to-br from-purple-50 to-white p-6 rounded-xl shadow-lg"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3ce7ad0ab7f6e0f4e7a9b7b8e0a4f9a4"
+              alt="coding illustration"
+              class="w-full h-56 object-cover rounded-lg"
+            />
+            <div class="mt-4">
+              <h3 class="font-semibold text-lg">Build real projects</h3>
+              <p class="text-sm text-gray-600 mt-2">
+                Project-based lessons to learn by doing and ship portfolio-ready
+                work.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="mt-16 py-10">
+        <h2 class="text-2xl font-bold">About Kohaq Education</h2>
+        <p class="mt-3 text-gray-700 max-w-3xl">
+          Kohaq Education focuses on teaching practical frontend skills for
+          students and junior developers. Our lessons emphasize accessible UI,
+          performance, and real-world development workflows.
+        </p>
+      </section>
+
+      <!-- COURSES -->
+      <section id="courses" class="mt-12">
+        <h2 class="text-2xl font-bold">Courses</h2>
+        <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Course Card 1 -->
+          <article class="card">
+            <h3 class="text-lg font-semibold">Frontend Bootcamp</h3>
+            <p class="text-sm text-gray-600 mt-2">
+              HTML, CSS, JS fundamentals plus modern tooling.
+            </p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-sm font-medium">6 weeks</span>
+              <button class="text-sm btn-outline-sm" onclick="scrollToReg()">
+                Register
+              </button>
+            </div>
+          </article>
+
+          <!-- Course Card 2 -->
+          <article class="card">
+            <h3 class="text-lg font-semibold">React + Vite</h3>
+            <p class="text-sm text-gray-600 mt-2">
+              Component-based development and state management.
+            </p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-sm font-medium">4 weeks</span>
+              <button class="text-sm btn-outline-sm" onclick="scrollToReg()">
+                Register
+              </button>
+            </div>
+          </article>
+
+          <!-- Course Card 3 -->
+          <article class="card">
+            <h3 class="text-lg font-semibold">UI/UX Essentials</h3>
+            <p class="text-sm text-gray-600 mt-2">
+              Design principles, responsive layouts, and accessibility.
+            </p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-sm font-medium">3 weeks</span>
+              <button class="text-sm btn-outline-sm" onclick="scrollToReg()">
+                Register
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SCHEDULE -->
+      <section id="schedule" class="mt-16">
+        <h2 class="text-2xl font-bold">Schedule</h2>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="p-4 bg-white rounded-lg shadow-sm">
+            <h4 class="font-semibold">Weekdays (Evening)</h4>
+            <p class="text-sm text-gray-600 mt-2">
+              Mon - Fri • 7:00PM - 9:00PM
+            </p>
+          </div>
+          <div class="p-4 bg-white rounded-lg shadow-sm">
+            <h4 class="font-semibold">Weekend (Intensive)</h4>
+            <p class="text-sm text-gray-600 mt-2">
+              Sat - Sun • 10:00AM - 2:00PM
+            </p>
+          </div>
+          <div class="p-4 bg-white rounded-lg shadow-sm">
+            <h4 class="font-semibold">Self-Paced</h4>
+            <p class="text-sm text-gray-600 mt-2">
+              Flexible hours — recorded lessons + mentor support.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="mt-16 mb-14">
+        <h2 class="text-2xl font-bold">Contact</h2>
+        <div class="mt-4 sm:flex sm:items-start sm:gap-6">
+          <div class="sm:w-1/2">
+            <p class="text-gray-700">
+              Questions? Reach out to our support or follow us on social media.
+            </p>
+            <ul class="mt-4 text-sm text-gray-600 space-y-2">
+              <li><strong>Email:</strong> hello@kohaq.edu</li>
+              <li><strong>Phone:</strong> +92 300 1234567</li>
+              <li><strong>Location:</strong> Lahore, Pakistan</li>
+            </ul>
+          </div>
+
+          <form
+            id="contactForm"
+            class="mt-6 sm:mt-0 sm:w-1/2 bg-white p-4 rounded-lg shadow-sm"
+          >
+            <label class="block text-sm">Name</label>
+            <input name="name" class="input-field" required />
+
+            <label class="block text-sm mt-3">Email</label>
+            <input name="email" type="email" class="input-field" required />
+
+            <label class="block text-sm mt-3">Message</label>
+            <textarea name="message" rows="3" class="input-field"></textarea>
+
+            <div class="mt-4 flex justify-end">
+              <button type="submit" class="btn-primary">Send</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t">
+      <div
+        class="container mx-auto px-6 py-6 text-center text-sm text-gray-600"
+      >
+        © <span id="year"></span> Kohaq Education — All rights reserved.
+      </div>
+    </footer>
+
+    <!-- Registration Modal (hidden by default) -->
+    <div
+      id="modal"
+      class="fixed inset-0 bg-black/40 hidden items-center justify-center z-50"
+    >
+      <div class="bg-white rounded-lg w-full max-w-md p-6 shadow-lg">
+        <div class="flex justify-between items-center">
+          <h3 class="text-lg font-semibold">Register for Kohaq Course</h3>
+          <button id="closeModal" aria-label="Close">&times;</button>
+        </div>
+
+        <form id="registerForm" class="mt-4 space-y-3">
+          <div>
+            <label class="block text-sm">Full name</label>
+            <input name="fullname" id="fullname" class="input-field" required />
+          </div>
+
+          <div>
+            <label class="block text-sm">Email</label>
+            <input
+              name="email"
+              id="email"
+              type="email"
+              class="input-field"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm">Choose course</label>
+            <select id="courseSelect" class="input-field">
+              <option>Frontend Bootcamp</option>
+              <option>React + Vite</option>
+              <option>UI/UX Essentials</option>
+            </select>
+          </div>
+
+          <div class="flex justify-end gap-3 mt-2">
+            <button type="button" id="cancelBtn" class="btn-outline">
+              Cancel
+            </button>
+            <button type="submit" class="btn-primary">
+              Submit Registration
+            </button>
+          </div>
+
+          <p id="regMsg" class="text-sm mt-2 text-green-600 hidden">
+            Registration successful — we will contact you soon.
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
